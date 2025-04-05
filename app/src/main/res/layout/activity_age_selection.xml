@@ -1,0 +1,26 @@
+<!-- activity_age_selection.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/age_12_18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="12-18" />
+
+    <Button
+        android:id="@+id/age_18_35"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="18-35" />
+
+    <Button
+        android:id="@+id/age_35_plus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="35+" />
+
+</LinearLayout>

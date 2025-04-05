@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@color/color1"> <!-- Folosim o culoare pastelată din paleta ta -->
+
+    <!-- Titlul paginii -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:padding="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:textStyle="bold"/>
+
+    <!-- Câmp pentru email -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/color3"> <!-- Culoare pastelată -->
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:padding="16dp"
+            android:inputType="textEmailAddress"
+            android:background="@android:color/white"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Câmp pentru parolă -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/color3"> <!-- Culoare pastelată -->
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:padding="16dp"
+            android:inputType="textPassword"
+            android:background="@android:color/white"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Buton de login -->
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:backgroundTint="@color/color4"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center"
+        android:radius="16dp"/>
+
+    <!-- Buton pentru a naviga la register -->
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to Register"
+        android:backgroundTint="@color/color3"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:layout_gravity="center"
+        android:radius="16dp"/>
+
+</LinearLayout>

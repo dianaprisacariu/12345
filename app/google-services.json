@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "79877276661",
+    "project_id": "skinwise-app",
+    "storage_bucket": "skinwise-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79877276661:android:aafc7cfb24f6f5484c16bc",
+        "android_client_info": {
+          "package_name": "com.example.skinwise"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaOBixz286GPShwboMffJhgmVmqJIf4gs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Skinwise</string>
+
+    <!-- Definirea categoriilor de vârstă -->
+    <string-array name="age_groups">
+        <item>12-17 years</item>
+        <item>18-34 years</item>
+        <item>35+ years</item>
+    </string-array>
+</resources>

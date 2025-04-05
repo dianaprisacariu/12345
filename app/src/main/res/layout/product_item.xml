@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nume produs"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/productScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scor produs"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/productDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descriere"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/recommendedAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vârsta recomandată"
+        android:textSize="14sp" />
+</LinearLayout>
