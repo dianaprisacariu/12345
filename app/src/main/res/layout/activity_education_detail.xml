@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_bubbles">
+
+    <!-- Săgeata de înapoi fixă -->
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_arrow_back"
+        android:layout_margin="16dp"
+        android:layout_gravity="start|top"
+        android:contentDescription="Înapoi" />
+
+    <!-- Conținut scrollabil dedesubt -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:layout_marginTop="64dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lessonTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Titlu lecție"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#F7F9F2"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginBottom="16dp" />
+
+            <ImageView
+                android:id="@+id/lessonImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/text_background"
+                android:padding="20dp"
+                android:elevation="4dp">
+
+                <TextView
+                    android:id="@+id/lessonContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Conținut lecție..."
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    android:lineSpacingExtra="6dp"
+                    android:fontFamily="@font/poppins_regular" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

@@ -67,4 +67,9 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.squareup.okhttp3:okhttp:4.9.0")
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation ("org.apache.commons:commons-text:1.9")
+    implementation ("nl.dionsegijn:konfetti-xml:2.0.2")
+    implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
 }

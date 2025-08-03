@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_bubbles"
+    tools:context=".view.SkinTypeResultActivity">
+
+    <!-- Toolbar fără titlu -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBarSkinTypeResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="#F7F9F2"
+        android:elevation="0dp" />
+
+    <!-- ScrollView pentru conținut -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topAppBarSkinTypeResult"
+        android:padding="24dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Chenar alb semi-transparent -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#99FFFFFF"
+                android:padding="18dp"
+                android:layout_marginBottom="24dp"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTintMode="src_atop"
+                android:elevation="8dp"
+                android:clipToPadding="false">
+
+                <!-- Text: Tipul de piele -->
+                <TextView
+                    android:id="@+id/skinTypeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tipul tău de piele este:"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#329F92"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:shadowColor="#66000000"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2" />
+
+                <!-- Text: Recomandări -->
+                <TextView
+                    android:id="@+id/recommendationsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recomandări pentru pielea ta"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#329F92"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:shadowColor="#66000000"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2" />
+
+            </LinearLayout>
+
+            <!-- Lista cu produse recomandate -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recommendedProductsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:visibility="gone" />
+
+            <!-- Buton Înapoi -->
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Înapoi la meniu"
+                android:backgroundTint="#91DDCF"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_medium"
+                android:padding="14dp"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

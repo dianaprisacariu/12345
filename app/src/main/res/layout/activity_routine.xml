@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_bubbles">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBarRoutine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#91ddcf"
+        android:elevation="4dp"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="Rutina mea"
+        app:titleTextColor="@android:color/white"
+        app:titleCentered="true" />
+
+    <!-- Conținut -->
+    <ScrollView
+        android:layout_below="@id/topAppBarRoutine"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Titlu Dimineață -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✨ Rutină Dimineață"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#F19ED2"
+                android:gravity="center"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:padding="10dp"
+                android:background="@drawable/bg_translucent_white"
+                android:fontFamily="@font/poppins_medium" />
+
+
+            <!-- Info glisare -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" Glisează stânga sau dreapta pentru a șterge un produs"
+                android:textSize="14sp"
+                android:textColor="#4444"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/selectMorningProducts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selectează produse dimineață"
+                android:backgroundTint="#91ddcf"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/poppins_medium" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/morningRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Titlu Seară -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🌙 Rutină Seară"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#F19ED2"
+                android:gravity="center"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:padding="10dp"
+                android:background="@drawable/bg_translucent_white"
+                android:fontFamily="@font/poppins_medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" Glisează stânga sau dreapta pentru a șterge un produs"
+                android:textSize="14sp"
+                android:textColor="#4444"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+
+            <Button
+                android:id="@+id/selectEveningProducts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selectează produse seară"
+                android:backgroundTint="#91ddcf"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/poppins_medium" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/eveningRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:layout_marginBottom="32dp" />
+
+            <Button
+                android:id="@+id/saveRoutineButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="💾 Salvează rutina"
+                android:textSize="18sp"
+                android:backgroundTint="#91ddcf"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/poppins_medium" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

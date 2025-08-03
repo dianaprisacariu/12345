@@ -6,4 +6,9 @@
     <color name="color2">#F7F9F2</color>
     <color name="color3">#E8C5E5</color>
     <color name="color4">#F19ED2</color>
+    <color name="correct_green">#A5D6A7</color>
+    <color name="error_red">#EF9A9A</color>
+    <color name="beige_text">#F7F9F2</color>
+    <color name="see_more_color">#319C8A</color>
+    <color name="teal_200">#03DAC5</color>
 </resources>

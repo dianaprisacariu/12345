@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_bubbles"
+    tools:context=".view.SearchResultsActivity">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBarResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:navigationIcon="@drawable/ic_arrow_back"
+        android:title="Rezultate"
+        android:titleTextColor="#91DDCF"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary" />
+
+    <!-- ScrollView sub Toolbar -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="#99FFFFFF"
+            android:layout_margin="16dp"
+            android:elevation="4dp">
+
+            <TextView
+                android:id="@+id/resultsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔎 Rezultate căutare"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="#6FC9BE"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_regular" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resultsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingBottom="24dp"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_bubbles"
+    android:padding="24dp">
+
+    <!-- Toolbar sus -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBarProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#91ddcf"
+        android:elevation="4dp"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="Profil utilizator"
+        app:titleTextColor="@android:color/white"
+        app:titleCentered="true" />
+
+    <!-- Card central -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/topAppBarProfile"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:background="@drawable/card_background"
+        android:padding="24dp"
+        android:elevation="8dp"
+        android:layout_marginTop="48dp">
+
+        <TextView
+            android:id="@+id/greetingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salutare, utilizator!"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/profileNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="utilizator"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/profileEmailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="email@exemplu.com"
+            android:textSize="14sp"
+            android:textColor="#777777"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginBottom="16dp" />
+        <TextView
+            android:id="@+id/skinTypeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tipul tău de piele: necunoscut"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/lastRoutineText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📅 Ultima actualizare a rutinei: -"
+            android:textSize="14sp"
+            android:textColor="#555555"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/editNameButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="✏️ Editează numele"
+            android:backgroundTint="#91ddcf"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔒 Deconectare"
+            android:backgroundTint="#FF8A80"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚙️ Setări"
+            android:backgroundTint="#AAAAAA"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/poppins_medium" />
+
+        <Button
+            android:id="@+id/deleteAccountButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🗑️ Șterge contul"
+            android:backgroundTint="#D32F2F"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/poppins_medium" />
+    </LinearLayout>
+</RelativeLayout>

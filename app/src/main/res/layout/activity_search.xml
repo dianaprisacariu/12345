@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_bubbles"
+    tools:context=".view.SearchActivity">
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBarSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:navigationIcon="@drawable/ic_arrow_back"
+        android:title="Căutare"
+        android:titleTextColor="#91DDCF"
+        android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topAppBarSearch"
+        android:padding="24dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#99FFFFFF"
+            android:padding="24dp"
+            android:layout_margin="8dp"
+            android:elevation="6dp">
+
+            <!-- Titlu -->
+            <TextView
+                android:id="@+id/searchTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔍 Căutare produse"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#6FC9BE"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/poppins_regular" />
+
+            <!-- Câmp de căutare -->
+            <EditText
+                android:id="@+id/searchEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ex: CeraVe, Nivea, Retinol..."
+                android:padding="14dp"
+                android:textSize="16sp"
+                android:textColor="#444444"
+                android:textColorHint="#888888"
+                android:background="@drawable/search_edittext_background"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_regular" />
+
+            <!-- Eticheta Spinner vârstă -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🧒 Selectează vârsta recomandată"
+                android:textColor="#555"
+                android:layout_marginBottom="6dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular" />
+
+            <!-- Spinner vârstă -->
+            <Spinner
+                android:id="@+id/ageFilterSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_background"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/poppins_regular" />
+
+            <!-- Eticheta Spinner scor -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⭐ Scor minim dorit"
+                android:textColor="#555"
+                android:layout_marginBottom="6dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular" />
+
+            <!-- Spinner scor -->
+            <Spinner
+                android:id="@+id/scoreFilterSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_background"
+                android:padding="12dp"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/poppins_regular" />
+
+            <!-- Buton căutare -->
+            <Button
+                android:id="@+id/searchButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔎 Caută"
+                android:backgroundTint="#F19ED2"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:padding="14dp"
+                android:layout_marginBottom="14dp"
+                android:fontFamily="@font/poppins_regular" />
+
+            <!-- Buton resetare -->
+            <Button
+                android:id="@+id/resetButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="♻️ Resetare filtre"
+                android:backgroundTint="#91DDCF"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:padding="14dp"
+                android:fontFamily="@font/poppins_regular" />
+
+            <!-- RecyclerView rezultate -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resultsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:clipToPadding="false"
+                android:paddingBottom="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

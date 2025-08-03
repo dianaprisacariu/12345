@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_bubbles"
+    tools:context=".view.FavoritesActivity">
+
+    <!-- Toolbar definit cu ID-ul corect -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBarFavorites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:navigationIcon="@drawable/ic_arrow_back"
+        android:title="Favorite"
+        android:titleTextColor="#91ddcf"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary" />
+
+    <!-- ScrollView poziționat sub Toolbar -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topAppBarFavorites"
+        android:fillViewport="true"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#99FFFFFF"
+            android:padding="24dp"
+            android:layout_margin="8dp"
+            android:elevation="6dp">
+
+            <TextView
+                android:id="@+id/favoritesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Favorite"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#7CCDC3"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/poppins_regular" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/favoritesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:clipToPadding="false"
+                android:paddingBottom="16dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
