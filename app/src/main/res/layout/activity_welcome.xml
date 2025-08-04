@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="292dp"
-        android:text="ceva diferit"
+        android:text="Ghidul tău de skincare"
         android:textAlignment="center"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"

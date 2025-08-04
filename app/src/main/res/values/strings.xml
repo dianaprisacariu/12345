@@ -1,10 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Skinwise</string>
 
-    <!-- Definirea categoriilor de vârstă -->
-    <string-array name="age_groups">
-        <item>12-17 years</item>
-        <item>18-34 years</item>
-        <item>35+ years</item>
+    <!-- Titluri -->
+    <string name="search_title">🔍 Căutare produse</string>
+
+    <!-- Hinturi și etichete -->
+    <string name="search_hint">Ex: CeraVe, Nivea, Retinol...</string>
+    <string name="select_age_label">🧒 Selectează vârsta recomandată</string>
+    <string name="select_score_label">⭐ Selectează scorul minim</string>
+
+    <!-- Butoane -->
+    <string name="search_button_text">🔎 Caută</string>
+    <string name="reset_button_text">♻️ Resetare filtre</string>
+
+    <!-- Filtre spinner -->
+    <string-array name="age_filter_options">
+        <item>Toate</item>
+        <item>0+</item>
+        <item>6+</item>
+        <item>13+</item>
+        <item>16+</item>
+        <item>18+</item>
     </string-array>
+
+    <string-array name="score_filter_options">
+        <item>Toate</item>
+        <item>6+</item>
+        <item>11+</item>
+        <item>16+</item>
+    </string-array>
+
+    <!-- Mesaje -->
+    <string name="no_products_found">Nu am găsit produse</string>
+    <string name="added_to_favorites">Adăugat la favorite</string>
+    <string name="removed_from_favorites">Eliminat din favorite</string>
 </resources>

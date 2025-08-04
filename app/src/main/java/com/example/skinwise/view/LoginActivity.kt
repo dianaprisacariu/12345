@@ -24,27 +24,29 @@ class LoginActivity : AppCompatActivity() {
         val registerButton: Button = findViewById(R.id.register_button)
 
         loginButton.setOnClickListener {
-            val email = emailEditText.text.toString()
-            val password = passwordEditText.text.toString()
+            val email = emailEditText.text.toString().trim()
+            val password = passwordEditText.text.toString().trim()
 
-            loginViewModel.loginUser(email, password)
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                loginViewModel.loginUser(email, password)
+            } else {
+                Toast.makeText(this, "Introdu emailul și parola", Toast.LENGTH_SHORT).show()
+            }
         }
 
-        loginViewModel.loginStatus.observe(this, { status ->
+        loginViewModel.loginStatus.observe(this) { status ->
             when (status) {
                 is LoginViewModel.LoginStatus.Success -> {
-                    Toast.makeText(this, "User logged in successfully", Toast.LENGTH_SHORT).show()
-
-                    // Redirecționăm direct la MainActivity după login cu succes
+                    Toast.makeText(this, "Autentificare reușită", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
-                    finish() // Asigură-te că activitatea curentă este închisă pentru a preveni revenirea
+                    finish() // închide ecranul de login
                 }
                 is LoginViewModel.LoginStatus.Error -> {
-                    Toast.makeText(this, "Login failed: ${status.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Eroare la autentificare: ${status.message}", Toast.LENGTH_SHORT).show()
                 }
             }
-        })
+        }
 
         registerButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)

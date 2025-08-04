@@ -1,5 +1,6 @@
 package com.example.skinwise.view
 
+import RegisterViewModel
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -8,7 +9,9 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.skinwise.R
-import com.example.skinwise.viewmodel.RegisterViewModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
+import com.google.firebase.firestore.FirebaseFirestore
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -27,27 +30,64 @@ class RegisterActivity : AppCompatActivity() {
         val loginButton: Button = findViewById(R.id.login_button)
 
         registerButton.setOnClickListener {
-            val email = emailEditText.text.toString()
-            val password = passwordEditText.text.toString()
-            val firstName = firstNameEditText.text.toString()
-            val lastName = lastNameEditText.text.toString()
-            val phone = phoneEditText.text.toString()
+            val email = emailEditText.text.toString().trim()
+            val password = passwordEditText.text.toString().trim()
+            val firstName = firstNameEditText.text.toString().trim()
+            val lastName = lastNameEditText.text.toString().trim()
+            val phone = phoneEditText.text.toString().trim()
 
-            registerViewModel.registerUser(email, password, firstName, lastName, phone)
+            if (email.isNotEmpty() && password.isNotEmpty() && firstName.isNotEmpty() && lastName.isNotEmpty()) {
+                registerViewModel.registerUser(email, password, firstName, lastName, phone)
+            } else {
+                Toast.makeText(this, "Completează toate câmpurile obligatorii", Toast.LENGTH_SHORT).show()
+            }
         }
 
-        registerViewModel.registerStatus.observe(this, { status ->
+        registerViewModel.registerStatus.observe(this) { status ->
             when (status) {
                 is RegisterViewModel.RegisterStatus.Success -> {
-                    Toast.makeText(this, "User registered successfully", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, LoginActivity::class.java)
-                    startActivity(intent)
+                    val user = FirebaseAuth.getInstance().currentUser
+                    if (user != null) {
+                        // Actualizează displayName
+                        val fullName = "${firstNameEditText.text} ${lastNameEditText.text}"
+                        val profileUpdates = userProfileChangeRequest {
+                            displayName = fullName
+                        }
+                        user.updateProfile(profileUpdates)
+
+                        // 🔥 Salvează în Firestore
+                        val db = FirebaseFirestore.getInstance()
+                        val userData = mapOf(
+                            "uid" to user.uid,
+                            "email" to user.email,
+                            "firstName" to firstNameEditText.text.toString(),
+                            "lastName" to lastNameEditText.text.toString(),
+                            "fullName" to fullName,
+                            "phone" to phoneEditText.text.toString(),
+                            "skinType" to "",
+                            "allergy" to ""
+                        )
+
+                        db.collection("users")
+                            .document(user.uid)
+                            .set(userData)
+                            .addOnSuccessListener {
+                                Toast.makeText(this, "Cont creat cu succes!", Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this, LoginActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                            }
+                            .addOnFailureListener {
+                                Toast.makeText(this, "Eroare la salvarea în Firestore", Toast.LENGTH_SHORT).show()
+                            }
+                    }
                 }
+
                 is RegisterViewModel.RegisterStatus.Error -> {
-                    Toast.makeText(this, "Registration failed: ${status.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Înregistrare eșuată: ${status.message}", Toast.LENGTH_SHORT).show()
                 }
             }
-        })
+        }
 
         loginButton.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)

@@ -1,38 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="12dp"
-    android:layout_marginBottom="8dp"
-    android:background="?android:attr/selectableItemBackground">
+    android:layout_margin="12dp"
+    card_view:cardCornerRadius="18dp"
+    card_view:cardElevation="10dp"
+    card_view:cardBackgroundColor="@android:color/white"
+    card_view:cardUseCompatPadding="true">
 
-    <TextView
-        android:id="@+id/productName"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nume produs"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/productScore"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Scor produs"
-        android:textSize="16sp" />
+        <!-- Imagine produs -->
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/image_background"
+            android:padding="4dp" />
+        <ImageView
+            android:id="@+id/favoriteIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_favorite_border"
+            android:contentDescription="Favorite"
+            android:padding="4dp"
+            android:tint="@color/see_more_color" />
 
-    <TextView
-        android:id="@+id/productDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Descriere"
-        android:textSize="14sp" />
+        <!-- Nume -->
+        <TextView
+            android:id="@+id/productName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nume produs"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#2C2C2C"
+            android:layout_marginBottom="6dp" />
 
-    <TextView
-        android:id="@+id/recommendedAge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Vârsta recomandată"
-        android:textSize="14sp" />
-</LinearLayout>
+        <!-- Brand -->
+        <TextView
+            android:id="@+id/productBrand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Brand"
+            android:textSize="14sp"
+            android:textColor="#5C5C5C"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Categorie -->
+        <TextView
+            android:id="@+id/productCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Categorie"
+            android:textSize="14sp"
+            android:textColor="#5C5C5C"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Scor -->
+        <TextView
+            android:id="@+id/productScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scor: 0/20"
+            android:padding="6dp"
+            android:background="@drawable/bg_score_red"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Ingrediente -->
+        <LinearLayout
+            android:id="@+id/ingredientsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_ingredients_box"
+            android:padding="12dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingrediente"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#2C2C2C"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/productDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingrediente..."
+                android:textSize="13sp"
+                android:textColor="#444444"
+                android:maxLines="3"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/toggleIngredients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Afișează mai mult"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:paddingTop="4dp"
+                android:textColor="@color/see_more_color"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginTop="6dp"
+                android:foreground="?attr/selectableItemBackground" />
+        </LinearLayout>
+
+        <!-- Vârstă recomandată -->
+        <TextView
+            android:id="@+id/recommendedAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vârsta recomandată: -"
+            android:textColor="#319C8A"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/activeIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingrediente active:"
+            android:textSize="13sp"
+            android:textColor="#444444"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
